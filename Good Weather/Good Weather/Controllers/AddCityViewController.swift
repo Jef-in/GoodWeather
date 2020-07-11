@@ -11,6 +11,22 @@ import UIKit
 
 class AddCityViewController : UIViewController {
     
+    @IBOutlet weak var cityNameTextField: UITextField!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+    }
+    
+    @IBAction func saveButton(_ sender: Any) {
+        
+        
+    }
+    
+    @IBAction func closeButton(_ sender: Any) {
+        
+        self.dismiss(animated: true, completion: nil)
+        
+    }
     
 }

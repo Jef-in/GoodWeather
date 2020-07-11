@@ -16,13 +16,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="ogf-jL-rtB">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WeatherCell" rowHeight="100" id="ogf-jL-rtB" customClass="WeatherCell" customModule="Good_Weather" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ogf-jL-rtB" id="IOi-Wg-Ozh">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gr3-sP-Pw5">
+                                            <rect key="frame" x="20" y="38" width="48" height="24"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="46Q-RI-aOH">
+                                            <rect key="frame" x="323" y="32" width="71" height="36"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="gr3-sP-Pw5" firstAttribute="centerY" secondItem="IOi-Wg-Ozh" secondAttribute="centerY" id="CzX-vA-ioU"/>
+                                        <constraint firstAttribute="trailing" secondItem="46Q-RI-aOH" secondAttribute="trailing" constant="20" id="XHy-6p-5d3"/>
+                                        <constraint firstItem="46Q-RI-aOH" firstAttribute="centerY" secondItem="IOi-Wg-Ozh" secondAttribute="centerY" id="ZCP-Y8-m7j"/>
+                                        <constraint firstItem="gr3-sP-Pw5" firstAttribute="leading" secondItem="IOi-Wg-Ozh" secondAttribute="leading" constant="20" id="fVq-Pb-mzP"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="citynameLabel" destination="gr3-sP-Pw5" id="ds9-Qw-ruI"/>
+                                    <outlet property="temperatureLabel" destination="46Q-RI-aOH" id="jro-eR-50l"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -50,10 +74,40 @@
                     <view key="view" contentMode="scaleToFill" id="ufF-fc-V8k">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="izj-QE-ngn">
+                                <rect key="frame" x="34.5" y="143" width="345" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FOF-s3-Gg2">
+                                <rect key="frame" x="190" y="207" width="34" height="30"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveButton:" destination="Mo6-EM-Sr5" eventType="touchUpInside" id="YlE-Xs-hgi"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="izj-QE-ngn" firstAttribute="centerX" secondItem="eN2-CY-mz9" secondAttribute="centerX" id="Ecg-c8-NIT"/>
+                            <constraint firstItem="izj-QE-ngn" firstAttribute="width" secondItem="ufF-fc-V8k" secondAttribute="width" multiplier="1:1.2" id="TjR-E7-n7x"/>
+                            <constraint firstItem="izj-QE-ngn" firstAttribute="top" secondItem="eN2-CY-mz9" secondAttribute="top" constant="55" id="Vy1-Yg-J1Z"/>
+                            <constraint firstItem="FOF-s3-Gg2" firstAttribute="top" secondItem="izj-QE-ngn" secondAttribute="bottom" constant="30" id="bVr-uP-33u"/>
+                            <constraint firstItem="FOF-s3-Gg2" firstAttribute="centerX" secondItem="izj-QE-ngn" secondAttribute="centerX" id="jen-VS-wFn"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="eN2-CY-mz9"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Add City" id="oDD-7v-OhX"/>
+                    <navigationItem key="navigationItem" title="Add City" id="oDD-7v-OhX">
+                        <barButtonItem key="leftBarButtonItem" title="Close" id="SrQ-XU-i3X">
+                            <connections>
+                                <action selector="closeButton:" destination="Mo6-EM-Sr5" id="XLf-eV-ycZ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="cityNameTextField" destination="izj-QE-ngn" id="P7o-rU-99T"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zU6-AD-SUb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
