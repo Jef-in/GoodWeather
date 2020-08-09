@@ -39,17 +39,48 @@ class WeatherListTableViewController : UITableViewController,addWeatherDelegate 
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        guard let nav = segue.destination as? UINavigationController else {
+      
+        if segue.identifier == "AddCityViewController" {
             
-            fatalError("Naviagtion controller not found")
-        }
-        guard let addWeatherCityVC = nav.viewControllers.first as? AddCityViewController else {
+            prepareSegureForAddCity(segue: segue)
             
-            fatalError("AddWeatherCity Controller not found")
+        } else if segue.identifier == "SettingsTableViewController" {
+            
+            prepareSegureForSettings(segue: segue)
         }
-        addWeatherCityVC.delegate = self
+      
     }
+    
+    
+    private func prepareSegureForAddCity(segue : UIStoryboardSegue) {
+        
+    guard let nav = segue.destination as? UINavigationController else {
+        
+        fatalError("Naviagtion controller not found")
+    }
+    guard let addWeatherCityVC = nav.viewControllers.first as? AddCityViewController else {
+        
+        fatalError("AddWeatherCity Controller not found")
+    }
+    addWeatherCityVC.delegate = self
+        
+        
+    }
+    
+    private func prepareSegureForSettings(segue : UIStoryboardSegue) {
+         
+     guard let nav = segue.destination as? UINavigationController else {
+         
+         fatalError("Naviagtion controller not found")
+     }
+     guard let settingsVC = nav.viewControllers.first as? SettingsTableViewController else {
+         
+         fatalError("AddWeatherCity Controller not found")
+     }
+     
+        settingsVC.delegate = self
+         
+     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -65,4 +96,17 @@ class WeatherListTableViewController : UITableViewController,addWeatherDelegate 
         
         return 100
     }
+}
+extension WeatherListTableViewController : SettingsDelegate {
+   
+    
+    func settingsDone(vm: SettingsViewModel) {
+        
+        print("settings Done")
+        self.weatherListViewModel.updateUnit(to : vm.selectedUnit)
+        self.tableView.reloadData()
+    }
+    
+    
+    
 }

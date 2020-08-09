@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         manageNavigationBar()
         UIBarButtonItem.appearance().tintColor = UIColor.white
+        setupDefaultSettings()
         
         return true
     }
@@ -38,7 +39,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
  
-
+    private func setupDefaultSettings() {
+        
+        let userdefaults = UserDefaults.standard
+        if userdefaults.value(forKey: "unit") == nil {
+            
+        userdefaults.set(Unit.farenheit.rawValue, forKey: "unit")
+            
+        }
+    }
 
 }
 
