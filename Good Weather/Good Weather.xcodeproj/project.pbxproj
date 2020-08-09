@@ -13,6 +13,8 @@
 		493F45D624DFE58100AA4004 /* 740-gear-toolbar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 493F45D324DFE58100AA4004 /* 740-gear-toolbar@2x.png */; };
 		493F45D824DFE93100AA4004 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493F45D724DFE93100AA4004 /* SettingsTableViewController.swift */; };
 		493F45DA24DFECEF00AA4004 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493F45D924DFECEF00AA4004 /* SettingsViewModel.swift */; };
+		493F45DD24E02B3700AA4004 /* BindingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493F45DC24E02B3700AA4004 /* BindingTextField.swift */; };
+		493F45DF24E02EC900AA4004 /* addCityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493F45DE24E02EC900AA4004 /* addCityViewModel.swift */; };
 		49622E0324BA1724007BE17F /* WeatherListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49622E0224BA1724007BE17F /* WeatherListTableViewController.swift */; };
 		49622E0524BA1752007BE17F /* AddCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49622E0424BA1752007BE17F /* AddCityViewController.swift */; };
 		49622E0824BA1BF8007BE17F /* WeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49622E0724BA1BF8007BE17F /* WeatherCell.swift */; };
@@ -42,6 +44,8 @@
 		493F45D324DFE58100AA4004 /* 740-gear-toolbar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "740-gear-toolbar@2x.png"; sourceTree = "<group>"; };
 		493F45D724DFE93100AA4004 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		493F45D924DFECEF00AA4004 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		493F45DC24E02B3700AA4004 /* BindingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingTextField.swift; sourceTree = "<group>"; };
+		493F45DE24E02EC900AA4004 /* addCityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addCityViewModel.swift; sourceTree = "<group>"; };
 		49622E0224BA1724007BE17F /* WeatherListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherListTableViewController.swift; sourceTree = "<group>"; };
 		49622E0424BA1752007BE17F /* AddCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCityViewController.swift; sourceTree = "<group>"; };
 		49622E0724BA1BF8007BE17F /* WeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCell.swift; sourceTree = "<group>"; };
@@ -94,6 +98,14 @@
 			path = Images;
 			sourceTree = "<group>";
 		};
+		493F45DB24E02B1A00AA4004 /* Custom Controls */ = {
+			isa = PBXGroup;
+			children = (
+				493F45DC24E02B3700AA4004 /* BindingTextField.swift */,
+			);
+			path = "Custom Controls";
+			sourceTree = "<group>";
+		};
 		49622E0124BA170B007BE17F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +137,7 @@
 			children = (
 				49622E0D24BA26DD007BE17F /* WeatherListViewModel.swift */,
 				493F45D924DFECEF00AA4004 /* SettingsViewModel.swift */,
+				493F45DE24E02EC900AA4004 /* addCityViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -150,6 +163,7 @@
 		49CBA06324B211A900FF5AC6 /* Good Weather */ = {
 			isa = PBXGroup;
 			children = (
+				493F45DB24E02B1A00AA4004 /* Custom Controls */,
 				493F45D024DFE58100AA4004 /* Images */,
 				49125AA724DE9CE0002EC7B1 /* Extensions */,
 				49622E0C24BA26CB007BE17F /* ViewModels */,
@@ -284,7 +298,9 @@
 				49CBA06524B211A900FF5AC6 /* AppDelegate.swift in Sources */,
 				493F45D824DFE93100AA4004 /* SettingsTableViewController.swift in Sources */,
 				49622E0E24BA26DD007BE17F /* WeatherListViewModel.swift in Sources */,
+				493F45DF24E02EC900AA4004 /* addCityViewModel.swift in Sources */,
 				49622E0B24BA21AD007BE17F /* WebService.swift in Sources */,
+				493F45DD24E02B3700AA4004 /* BindingTextField.swift in Sources */,
 				49622E0524BA1752007BE17F /* AddCityViewController.swift in Sources */,
 				493F45DA24DFECEF00AA4004 /* SettingsViewModel.swift in Sources */,
 			);

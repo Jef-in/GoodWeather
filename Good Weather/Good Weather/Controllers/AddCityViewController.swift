@@ -17,7 +17,15 @@ func WeatherDidSave(vm : WeatherViewModel)
 
 class AddCityViewController : UIViewController {
     
-    @IBOutlet weak var cityNameTextField: UITextField!
+    private var cityViewModel = addCityViewModel()
+    
+    @IBOutlet weak var cityNameTextField: BindingTextField! {
+        
+        didSet {
+            
+            self.cityNameTextField.bind {  self.cityViewModel.city = $0 }
+        }
+    }
     
     var delegate : addWeatherDelegate?
     
@@ -27,6 +35,7 @@ class AddCityViewController : UIViewController {
     }
     
     @IBAction func saveButton(_ sender: Any) {
+       
        
         if let city = cityNameTextField.text {
             
