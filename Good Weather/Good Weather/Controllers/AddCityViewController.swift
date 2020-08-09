@@ -9,9 +9,17 @@
 import Foundation
 import UIKit
 
+protocol addWeatherDelegate {
+    
+func WeatherDidSave(vm : WeatherViewModel)
+    
+}
+
 class AddCityViewController : UIViewController {
     
     @IBOutlet weak var cityNameTextField: UITextField!
+    
+    var delegate : addWeatherDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,8 +40,17 @@ class AddCityViewController : UIViewController {
                 
             }
     
-            WebService().load(resource: weatherResource) { result  in
+            WebService().load(resource: weatherResource) {[weak self] result  in
              
+                if let weatherVM = result {
+                    
+                    if let delegate = self?.delegate {
+                        
+                        delegate.WeatherDidSave(vm: weatherVM)
+                        self?.dismiss(animated: true, completion: nil)
+                    }
+                    
+                }
                 
             }
             

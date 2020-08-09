@@ -13,6 +13,12 @@ class WeatherCell : UITableViewCell {
     
     @IBOutlet weak var citynameLabel : UILabel!
     @IBOutlet weak var temperatureLabel : UILabel!
+   
+    func configure(_ vm : WeatherViewModel) {
+        
+        citynameLabel.text = vm.name
+        temperatureLabel.text = "\(vm.currentTemperature.temperature.formatAsDegree)"
+    }
     
     override func awakeFromNib() {
         
