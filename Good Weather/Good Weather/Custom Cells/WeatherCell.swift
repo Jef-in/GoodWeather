@@ -16,8 +16,8 @@ class WeatherCell : UITableViewCell {
    
     func configure(_ vm : WeatherViewModel) {
         
-        citynameLabel.text = vm.name
-        temperatureLabel.text = "\(vm.currentTemperature.temperature.formatAsDegree)"
+        citynameLabel.text = vm.name.value
+        temperatureLabel.text = "\(vm.currentTemperature.temperature.value.formatAsDegree)"
     }
     
     override func awakeFromNib() {

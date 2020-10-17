@@ -20,6 +20,8 @@
 		49622E0824BA1BF8007BE17F /* WeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49622E0724BA1BF8007BE17F /* WeatherCell.swift */; };
 		49622E0B24BA21AD007BE17F /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49622E0A24BA21AD007BE17F /* WebService.swift */; };
 		49622E0E24BA26DD007BE17F /* WeatherListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49622E0D24BA26DD007BE17F /* WeatherListViewModel.swift */; };
+		49757988253B47C2007C3794 /* WeatherDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49757987253B47C2007C3794 /* WeatherDetailsViewController.swift */; };
+		4975798B253B59CD007C3794 /* TableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4975798A253B59CD007C3794 /* TableDataSource.swift */; };
 		49CBA06524B211A900FF5AC6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CBA06424B211A900FF5AC6 /* AppDelegate.swift */; };
 		49CBA06C24B211A900FF5AC6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49CBA06A24B211A900FF5AC6 /* Main.storyboard */; };
 		49CBA06E24B211AB00FF5AC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49CBA06D24B211AB00FF5AC6 /* Assets.xcassets */; };
@@ -51,6 +53,8 @@
 		49622E0724BA1BF8007BE17F /* WeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCell.swift; sourceTree = "<group>"; };
 		49622E0A24BA21AD007BE17F /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		49622E0D24BA26DD007BE17F /* WeatherListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherListViewModel.swift; sourceTree = "<group>"; };
+		49757987253B47C2007C3794 /* WeatherDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailsViewController.swift; sourceTree = "<group>"; };
+		4975798A253B59CD007C3794 /* TableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDataSource.swift; sourceTree = "<group>"; };
 		49CBA06124B211A900FF5AC6 /* Good Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Good Weather.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		49CBA06424B211A900FF5AC6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49CBA06B24B211A900FF5AC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -112,6 +116,7 @@
 				49622E0224BA1724007BE17F /* WeatherListTableViewController.swift */,
 				49622E0424BA1752007BE17F /* AddCityViewController.swift */,
 				493F45D724DFE93100AA4004 /* SettingsTableViewController.swift */,
+				49757987253B47C2007C3794 /* WeatherDetailsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -142,6 +147,14 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		49757989253B59B4007C3794 /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				4975798A253B59CD007C3794 /* TableDataSource.swift */,
+			);
+			path = DataSources;
+			sourceTree = "<group>";
+		};
 		49CBA05824B211A900FF5AC6 = {
 			isa = PBXGroup;
 			children = (
@@ -163,6 +176,7 @@
 		49CBA06324B211A900FF5AC6 /* Good Weather */ = {
 			isa = PBXGroup;
 			children = (
+				49757989253B59B4007C3794 /* DataSources */,
 				493F45DB24E02B1A00AA4004 /* Custom Controls */,
 				493F45D024DFE58100AA4004 /* Images */,
 				49125AA724DE9CE0002EC7B1 /* Extensions */,
@@ -294,6 +308,7 @@
 			files = (
 				49622E0824BA1BF8007BE17F /* WeatherCell.swift in Sources */,
 				49622E0324BA1724007BE17F /* WeatherListTableViewController.swift in Sources */,
+				49757988253B47C2007C3794 /* WeatherDetailsViewController.swift in Sources */,
 				49125AA924DE9CF8002EC7B1 /* Double+Extensions.swift in Sources */,
 				49CBA06524B211A900FF5AC6 /* AppDelegate.swift in Sources */,
 				493F45D824DFE93100AA4004 /* SettingsTableViewController.swift in Sources */,
@@ -302,6 +317,7 @@
 				49622E0B24BA21AD007BE17F /* WebService.swift in Sources */,
 				493F45DD24E02B3700AA4004 /* BindingTextField.swift in Sources */,
 				49622E0524BA1752007BE17F /* AddCityViewController.swift in Sources */,
+				4975798B253B59CD007C3794 /* TableDataSource.swift in Sources */,
 				493F45DA24DFECEF00AA4004 /* SettingsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
